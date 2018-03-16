@@ -10,6 +10,9 @@ is a small integer, on the order of 5-30).  For each of these *n* pages
 *p<sup>'</sup><sub>i</sub>* in *{factual, creative}* that can guide
 a decision whether or not to expose *p<sub>i</sub>* to the public.
 
-More specifically, I pursued several 
-questions:
-  * 
+N.B. In my analysis, I refer to *factual* and *creative* as *open* and
+*closed*, respectively.  Thus the aim is make a prediction in 
+*{open, closed}* for each page *p<sub>i</sub>*.
+
+## Selection of *n*, The Number of Pages Under Consideration
+
