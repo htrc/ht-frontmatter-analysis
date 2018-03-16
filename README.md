@@ -16,3 +16,4 @@ N.B. In my analysis, I refer to *factual* and *creative* as *open* and
 
 ## Selection of *n*, The Number of Pages Under Consideration
 
+![alt](https://github.com/milesefron/ht-frontmatter/blob/master/plots/dbamman-section-distributions.pdf)
