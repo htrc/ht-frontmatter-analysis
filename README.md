@@ -39,3 +39,5 @@ creative/closed}*
 ## Selection of *n*, The Number of Pages Under Consideration
 
 ![alt](https://github.com/milesefron/ht-frontmatter/blob/master/plots/dbamman-section-distributions.png "Distribution of Section Types Across First 10 Pages")
+
+![alt](./plots/fp-fn.pn "False positives and false negatives as a function of n")
