@@ -40,4 +40,4 @@ creative/closed}*
 
 ![alt](https://github.com/milesefron/ht-frontmatter/blob/master/plots/dbamman-section-distributions.png "Distribution of Section Types Across First 10 Pages")
 
-![alt](tps://github.com/milesefron/ht-frontmatter/blob/master/plots/fp-fn.pn "False positives and false negatives as a function of n")
+![alt](./plots/fp-fn.png "False positives and false negatives as a function of n")
