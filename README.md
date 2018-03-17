@@ -40,3 +40,4 @@ creative/closed}*
 
 
 ![false pos/neg](./plots/fp-fn.png "False positives and false negatives as a function of n")
+**Figure 1. False Positive/Negative Counts as a Function of *N*, the Number of Pages Exposed**
