@@ -161,7 +161,8 @@ and type.  The models are summarized in Table 2.
 |RF	| Random Forests		| A state-of-the art, non-linear model	|
 |-------------------------------------------------------------------------------|
 ```
-**Table 2.  Learned Models. All models contain all 11 predictors listed in Table 1.
+
+** Table 2.  Learned Models. All models contain all 11 predictors listed in Table 1.
 
 ** Obtained Results
 
