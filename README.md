@@ -168,6 +168,7 @@ language (except that the SVM model used the radial basis function kernel type).
 Figure 2 schematizes the cross-validation accuracy of the models.
 
 ![xval](./plots/xval-results.png "10-fold crossvalidation accuracy")
+**Figure 2. 10-Fold Crossvalidation Accuracy**
 
 Figure 2 is heartening in several respects.  First, and most basically, it appears
 that even with a parsimonious and simple set of predictors the prospect of using
@@ -188,4 +189,44 @@ models, suggesting that this is a tractable but non-trivial prediction problem.
 2. We do not appear to be in great danger of over-fitting our models using the
 training data described here.  We return to this issue below.
 
+
+```
+|-----------------------|
+| Model	| Accuracy	|
+|-----------------------|
+| LDA	| 0.9068	|
+| CART	| 0.8881	|
+| LR	| 0.9139	|
+| KNN	| 0.9099	|
+| SVM	| 0.9423	|
+| RF	| 0.9504	|
+|-----------------------|
+```
+**Table 3.  Validation Set Model Accuracy
+
+These results are reinforced by Table 2, which lists the accuracy of each model
+on the validation set data.  Again, we see a high level of accuracy across the
+models, with the strongest results coming from the more complex models.
+
+
+### Analysis of Predictor Variables
+
+```
+                            Estimate Std. Error z value Pr(>|z|)    
+(Intercept)                 8.220248   0.257898  31.874  < 2e-16 ***
+seq                         0.153901   0.011918  12.913  < 2e-16 ***
+log_seq                    -4.289811   0.160233 -26.772  < 2e-16 ***
+token_count                -0.002508   0.000303  -8.277  < 2e-16 ***
+token_count_normalized     -0.669308   0.039166 -17.089  < 2e-16 ***
+line_count                 -0.019555   0.002922  -6.693 2.18e-11 ***
+line_count_normalized       0.007086   0.047086   0.150   0.8804    
+empty_line_count            0.022329   0.005170   4.319 1.57e-05 ***
+empy_line_count_normalized  0.312050   0.034637   9.009  < 2e-16 ***
+cap_alpha_seq              -0.057951   0.010944  -5.295 1.19e-07 ***
+pct_begin_char_caps         0.217768   0.085176   2.557   0.0106 *  
+pct_end_char_numeric        5.691780   0.204785  27.794  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+```
+**Figure 3.  Statistical Properties of the Logistic Regression's Coefficients**
 
