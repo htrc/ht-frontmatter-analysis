@@ -165,5 +165,7 @@ All models adopted the default parameterizations given in the ```R``` programmin
 language (except that the SVM model used the radial basis function kernel type).
 
 ### Obtained Results
+Figure 2 schematizes the cross-validation accuracy of the models.
 
+![xval](./plots/xval-results.png "10-fold crossvalidation accuracy")
 
