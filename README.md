@@ -138,7 +138,7 @@ generalizeability across languages and genres.
 
 
 
-** Learned Models
+**Learned Models**
 
 All models were obtained under the following setup.
 
@@ -161,9 +161,11 @@ and type.  The models are summarized in Table 2.
 |RF	| Random Forests		| A state-of-the art, non-linear model	|
 |-------------------------------------------------------------------------------|
 ```
+**Table 2.  Learned Models. All models contain all 11 predictors listed in Table 1.**
 
-** Table 2.  Learned Models. All models contain all 11 predictors listed in Table 1.
+All models adopted the default parameterizations given in the ```R``` programming
+language (except that the SVM model used the radial basis function kernel type).
 
-** Obtained Results
+**Obtained Results**
 
 
