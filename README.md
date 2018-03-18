@@ -48,7 +48,7 @@ while hiding most of the creative content?*
 
 Figure 1 suggests that this approach does not lead to a satisfying outcome.  The
 figure shows two plots (hence the different scales shown on the graph's *y*-axis).  
-In both plots the *x*-axis is *n*, the number of pages
+In both plots the *x*-axis is *n*, the number of pages hypothetically 
 exposed per volume. In blue, the figure shows the number of false positives at
 *n*.  In other words, each blue point gives the number of pages with a *closed*
 label (i.e. creative content) erroneously exposed under the hypothetical policy
@@ -60,4 +60,34 @@ The red points in the figure correspond to false negatives.  That is, for a give
 Figure 1 suggests that no single value of *n* yields a good outcome.  For instance,
 if we chose the very conservative policy of exposing only the first *n=5* pages
 of our 1055 volumes we have a very high false negative rate (approximately 14,000
-unexposed factual pages), while still incurring 171 exposed creative pages. 
+unexposed factual pages), while still incurring 171 exposed creative pages.  
+Assuming that false positives (exposed creative/closed pages) is highly 
+undesirable, Figure 1 suggests that we need a policy with more nuance than
+simply opening the first *n* pages per volume. 
+
+
+## Prospects for Success using Machine Learning to Expose Factual Pages
+In the previous section we explored the "naive" strategy of exposing the first
+*n* pages of each volume, and we found this strategy to be too blunt of an
+instrument for deployment in the wild.  A more nuanced approach is to learn
+of a function *f(p<sub>i</sub>)* that, given as input a page *p<sub>i</sub>*
+returns a prediction *o'<sub>i</sub>* that quantifies that likelihood that
+*p<sub>i</sub>* is of class *open*.  In this section we discuss initial
+results on the feasibility of learning such a function *f* using machine learning
+techniques.
+
+### Training Data
+We use the labels created by McConnaughey et al to train the models described
+below.  Thus we have 294,816 possible training instances--i.e. the labeled pages
+from 1055 volumes.  However, we have altered these data slightly to suit our
+needs more closely.  In particular, we altered the training data in two ways:
+* *Target Variable:* As described above, we map each of the 10 structural page
+categories used by McConnaughey et al onto the simpler scheme of *{open, closed}*.
+For instance, pages labeled by McConnaughey et al as *TOC* take the label *open*
+in our data, while pages labeled *preface* by McConnaughey are considered creative
+and thus carry a *closed* label in our datas.
+* *Pages Under Consideration:* Though not strictly necessary, we have limited our
+consideration to pages with sequence numbers <= 30.  That is, we consider only
+the first 30 (or fewer) pages per volume in our analysis.  Thus we work with a total
+of 30,266 labeled pages in the following discussion.
+
