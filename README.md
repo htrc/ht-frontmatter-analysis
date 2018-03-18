@@ -91,7 +91,10 @@ consideration to pages with sequence numbers <= 30.  That is, we consider only
 the first 30 (or fewer) pages per volume in our analysis.  Thus we work with a total
 of 30,266 labeled pages in the following discussion.
 
+
+
 **Predictor Variables**
+
 To test the feasibility of using machine learning for the task at hand, we 
 generated a set of 11 simple features for each of our 30,266 pages.
 
@@ -126,5 +129,40 @@ the task of identifying factual content regardless of the language, age and
 genre of a given volume.  The features shown in Table 1 ignore obviously important
 information such as vocabulary use in efforts to generate a model that might
 reasonably be applied across a wide variety of volumes from HT.
+
+It is important to note that no effort was made to generate an optimal set of
+predictive features.  Expediency and generalizeability were of paramount importance.
+In future work, more features, and more expressive features will almost surely
+improve the accuracy of learned classifiers, though perhaps at the cost of 
+generalizeability across languages and genres.
+
+
+
+** Learned Models
+
+All models were obtained under the following setup.
+
+First, the data were partitioned into training (80%) and validation (20%) sets.
+Models were trained using 10-fold cross-validation on the training data, and
+eventually tested on the validation set.
+
+In the interest of breadth of inquiry, we trained models of varying structure
+and type.  The models are summarized in Table 2.
+
+```
+|-------------------------------------------------------------------------------|
+|Abbrev	| Name				| Description				|
+|-------|-------------------------------|---------------------------------------|
+|LDA	| Linear Descriminant Analysis	| A simple, linear model		|
+|CART	| Classification Tree		| A simple, non-linear model		|
+|LR	| Logistic Regression		| An easily interpretable GLM		|
+|KNN	| K-Nearest Neighbors		| A non-linear, non-parametric model	|
+|SVM	| Support Vector Machine	| A state-of-the art, non-linear model	|
+|RF	| Random Forests		| A state-of-the art, non-linear model	|
+|-------------------------------------------------------------------------------|
+```
+**Table 2.  Learned Models. All models contain all 11 predictors listed in Table 1.
+
+** Obtained Results
 
 
