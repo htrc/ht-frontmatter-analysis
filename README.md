@@ -269,4 +269,37 @@ to this problem.
 ![sample size](./plots/acc-vs-size.png)
 **Figure 4.  Model Accuracy as a Function of Training Set Size.**
 
+Figure 4 plots model accuracy vs. the amount of training data used for three
+model types--logistic regression, SVMs, and random forests.  The graph was
+created by sampling *n'* (where *n'* is an integer <= 24,214) pages from our 
+training data, fitting each model on this reduced training set, and then 
+calculating model accuracy on our validation data.
 
+Not surprisingly, Figure 4 suggests that a logistic regression for this problem
+needs fewer labeled pages than more complex models such as random forests and
+support vector machines.  In fact, the logistic regression model approaches its
+maximum accuracy with only about 5000 labeled pages to learn from.  On the other
+hand, both random forests and support vector machines continue to improve
+with respect to accuracy, the more labeled pages we train them on.  However,
+even these complex models appear to plateau once we have at least ~15,000
+training instances.
+
+Figure 4 suggests that a relatively modest set of training data can deliver
+accurate models for the problem we are interested in.  If we are satisfied with
+a relatively simple model such as logistic regression, we may be able to
+find adequate results with only 10k-15k labeled pages.  However, if we opt to
+learn more flexible models, we will likely require on the order of 20k training
+instances.
+
+It is important to note, however, that the apparent saturation reached in Figure
+4 is partly a function of the very modestly parameterized models pursued in this
+analysis (cf Table 1).  If we choose to add predictors to our models, it is likely
+that more training data will be needed for our models to achieve low variance.
+Mitigating this assertion, however, is another strategy--instead of choosing n=30
+pages to label per volume as we have done here, we might be able to improve model
+accuracy with the same number of labels by choosing a lower *n*, say, *n=20*.
+The intuition behind this strategy is that pages 21-30 are, in most cases seen
+here, of class *closed* (i.e. creative).  As such they are not contributing as
+much to our learning process as lower numbered pages like are, insofar as these
+lower numbered pages are likely to contain more information about the distinction
+between *open* and *closed* page types.
