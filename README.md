@@ -18,6 +18,7 @@ The page labels used in this analysis are described in
 * Lara McConnaughey, Jennifer Dai and David Bamman (2017), "The Labeled Segmentation of Printed Books" (EMNLP 2017)
 and are available [here](https://github.com/dbamman/book-segmentation).  The
 data consist of 1055 HT volumes with publication dates between 1750 and 1922.
+These 1055 volumes contain a total of 294,816 pages.
 For each volume in the data set, McConnoaughey et al labeled each page with one
 of ten categories (e.g. TOC, index, title page, advertisement, main text, etc.)
 
@@ -37,7 +38,26 @@ creative/closed}*
  
 
 ## Selection of *n*, The Number of Pages Under Consideration
-
+Before approaching the task of labeling individual pages, we considered 
+simpler question: *Is it possible to select an integer n such that exposing the
+first n pages of all volumes will show a reasonable proportion of factual content
+while hiding most of the creative content?*
 
 ![false pos/neg](./plots/fp-fn.png "False positives and false negatives as a function of n")
 **Figure 1. False Positive/Negative Counts as a Function of *N*, the Number of Pages Exposed**
+
+Figure 1 suggests that this approach does not lead to a satisfying outcome.  The
+figure shows two plots (hence the different scales shown on the graph's *y*-axis).  
+In both plots the *x*-axis is *n*, the number of pages
+exposed per volume. In blue, the figure shows the number of false positives at
+*n*.  In other words, each blue point gives the number of pages with a *closed*
+label (i.e. creative content) erroneously exposed under the hypothetical policy
+of opening the first *n* pages per volume.
+
+The red points in the figure correspond to false negatives.  That is, for a given
+*n*, how many factual pages have we failed to expose?
+
+Figure 1 suggests that no single value of *n* yields a good outcome.  For instance,
+if we chose the very conservative policy of exposing only the first *n=5* pages
+of our 1055 volumes we have a very high false negative rate (approximately 14,000
+unexposed factual pages), while still incurring 171 exposed creative pages. 
