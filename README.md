@@ -114,3 +114,17 @@ generated a set of 11 simple features for each of our 30,266 pages.
 ```
 **Table 1. Predictor Variables per Page.  N.B. Averages and Std Deviations are
 taken at the volume level.**
+
+The features shown in Table 1 were chosen for three principal reasons:
+1. *Plausibility:* We chose features that we hoped would give an accurate sense
+of the level of accuracy obtainable using this general approach (i.e. machine
+learning).
+2. *Ease of Implementation:* These features are all easy to compute using the
+HTRC Extracted Features data and the ```HTRC FeatureReader``` API.
+3. *Data Agnostic:* Ostensibly, we hope to apply a machine learning approach to
+the task of identifying factual content regardless of the language, age and
+genre of a given volume.  The features shown in Table 1 ignore obviously important
+information such as vocabulary use in efforts to generate a model that might
+reasonably be applied across a wide variety of volumes from HT.
+
+
