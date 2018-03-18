@@ -164,6 +164,6 @@ and type.  The models are summarized in Table 2.
 All models adopted the default parameterizations given in the ```R``` programming
 language (except that the SVM model used the radial basis function kernel type).
 
-###Obtained Results
+### Obtained Results
 
 
