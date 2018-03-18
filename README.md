@@ -230,3 +230,43 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 ```
 **Figure 3.  Statistical Properties of the Logistic Regression's Coefficients**
 
+Because the predictors listed in Table 1 were chosen quite casually, it is 
+natural to assess the extent to which all of the variables are contributing to
+the prediction task.  In other words, is it the case that most of our variables
+actually contribute to the model, or is it, say, the case that most of the models'
+predictive accuracy comes from a small subset of the variables?
+
+Figure 3 suggests that most of the proposed predictors are quite valuable.
+The figure shows results only for the logistic regression model.  Results for
+other models were very similar, and the coefficients of logistic regression
+models are easy to interpret, which is why we focus on logistic regression in
+this section.
+
+With the exception of two variables (the normalized line count and the percent
+of lines starting with a capital letter), all of the learned coefficients
+were "highly statistically significant."  This suggests that we could probably
+improve our models by devising and adding more--and more expressive--features.
+
+As to why two of the features fail to show much predictive value, a few responses
+present themselves immediately.  First, it is possible that the code used to
+generate the ```line_count_normalized``` variable contains a bug, and that the
+variable may in fact be more helpful that it seems.  I believe this is plausible
+given the merits of the non-normalized line count.  Thus, I will re-run these
+experiments after re-checking the code.  With respect to ```pct_end_char_numeric```,
+weak prediction is actually not surprising.  This variable is likely to be helpful
+in indentifying segments such as indexes.  Since indexes typically lie outside of the
+n=30 pages analyzed in these experiments, it is not surprising that 
+```pct_end_char_numeric``` fails to prove useful here.
+
+
+### Effect of Sample Size on Model Accuracy
+A crucial question when using machine learning is, how many labeled instances
+(pages in our case) do we need in order to achieve a stable, accurate model?
+This is a notoriously difficult question, one without a decisive answer.  However,
+Figure 4 suggests some strategies and intuitions for labeling data in service
+to this problem.
+
+![sample size](./plots/acc-vs-size.png)
+**Figure 4.  Model Accuracy as a Function of Training Set Size.**
+
+
