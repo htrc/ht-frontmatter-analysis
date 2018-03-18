@@ -95,6 +95,7 @@ of 30,266 labeled pages in the following discussion.
 To test the feasibility of using machine learning for the task at hand, we 
 generated a set of 11 simple features for each of our 30,266 pages.
 
+```
 | Variable Name			| Description					|
 | seq				| The sequence/page number			|
 | log_seq			| The log of the sequence number		|
@@ -107,5 +108,6 @@ generated a set of 11 simple features for each of our 30,266 pages.
 | cap_alpha_seq			| Longest observed sequence of alphabetical caps|
 | pct_begin_char_caps		| % of lines that begin with a capital letter	|
 | pct_end_char_numeric		| % of lines that end with a roman numeral	|
+```
 **Table 1. Predictor Variables per Page.  N.B. Averages and Std Deviations are
 taken at the volume level.**
