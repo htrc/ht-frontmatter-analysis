@@ -93,8 +93,7 @@ of 30,266 labeled pages in the following discussion.
 
 
 
-**Predictor Variables**
-
+### Predictor Variables
 To test the feasibility of using machine learning for the task at hand, we 
 generated a set of 11 simple features for each of our 30,266 pages.
 
@@ -138,8 +137,7 @@ generalizeability across languages and genres.
 
 
 
-**Learned Models**
-
+### Learned Models
 All models were obtained under the following setup.
 
 First, the data were partitioned into training (80%) and validation (20%) sets.
@@ -166,6 +164,6 @@ and type.  The models are summarized in Table 2.
 All models adopted the default parameterizations given in the ```R``` programming
 language (except that the SVM model used the radial basis function kernel type).
 
-**Obtained Results**
+###Obtained Results
 
 
