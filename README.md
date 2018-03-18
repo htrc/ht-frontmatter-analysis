@@ -91,3 +91,21 @@ consideration to pages with sequence numbers <= 30.  That is, we consider only
 the first 30 (or fewer) pages per volume in our analysis.  Thus we work with a total
 of 30,266 labeled pages in the following discussion.
 
+**Predictor Variables**
+To test the feasibility of using machine learning for the task at hand, we 
+generated a set of 11 simple features for each of our 30,266 pages.
+
+| Variable Name			| Description					|
+| seq				| The sequence/page number			|
+| log_seq			| The log of the sequence number		|
+| token_count			| Number of tokens on the page			|
+| token_count_normalized	| (token_count - mean_tok_count)/std(tok_count)	|
+| line_count			| Number of lines of text on the page		|
+| line_count_normalized		| (line_count - mean_line_count)/std(line_count)|
+| empty_line_count		| Number of empty lines on the page		|
+| empty_line_count_normalized	| (empty_lc - mean_empty_lc) / std(empty_lc)	|
+| cap_alpha_seq			| Longest observed sequence of alphabetical caps|
+| pct_begin_char_caps		| % of lines that begin with a capital letter	|
+| pct_end_char_numeric		| % of lines that end with a roman numeral	|
+**Table 1. Predictor Variables per Page.  N.B. Averages and Std Deviations are
+taken at the volume level.**
