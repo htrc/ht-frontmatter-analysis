@@ -169,3 +169,23 @@ Figure 2 schematizes the cross-validation accuracy of the models.
 
 ![xval](./plots/xval-results.png "10-fold crossvalidation accuracy")
 
+Figure 2 is heartening in several respects.  First, and most basically, it appears
+that even with a parsimonious and simple set of predictors the prospect of using
+this sort of machine learning setup to expose factual content seems promising.  The
+accuracy of almost all of the models was greater than 90% on average, with both
+SVM and RF achieving average cross-validation accuracy ~95%.  
+
+(N.B. Among our 30,266 sample pages 11,453 had a ground-truth label of *open*.  Thus
+the accuracy obtained by the one-R rule of always choosing the dominant class was
+only 62%, suggesting that all of the learned models have non-trivial predictive
+power.)
+
+A second interesting result visible in Figure 2 is the narrow error bars on each
+model's cross-validation accuracy.  The figure's 95% confidence intervals suggest
+two important results:
+1. The more complex models such as RF and SVM appear to outperform the simpler
+models, suggesting that this is a tractable but non-trivial prediction problem.
+2. We do not appear to be in great danger of over-fitting our models using the
+training data described here.  We return to this issue below.
+
+
