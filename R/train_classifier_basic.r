@@ -2,7 +2,6 @@ library(caret)
 library(e1071)
 
 source("./R/partition_data.r")
-source("R/moving_average_prediction.r")
 
 x = read.csv("./data/java_training_data.csv", sep=" ", header=T, row.names=NULL)
 
@@ -17,7 +16,7 @@ x.test  = x.test[,-1]
 
 
 
-control = trainControl(method="cv", number=10, classProbs=TRUE)
+control = trainControl(method="none", classProbs=TRUE)
 #control = trainControl(method="cv", number=10)
 metric = "Accuracy"
 
@@ -34,14 +33,10 @@ results = resamples(list(lda=fit.lda, cart=fit.cart, lr=fit.lr, knn=fit.knn, svm
 summary(results)
 dotplot(results)
 
-predictions = predict(fit.lr, x.test)
+predictions = predict(fit.rf, x.test)
 confusionMatrix(predictions, x.test$target)
 
 
-## moving avg smoothing
-predictions = predict(fit.lr, x.test, type="prob")
-smoothed = predictionMovingAvg(predictions)
-confusionMatrix(smoothed, x.test$target)
 
 
 n = c(100, 250, 500, 1000, 2500, 5000, 7500, 10000, 15000, 24214)

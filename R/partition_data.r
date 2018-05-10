@@ -1,3 +1,7 @@
+# general-purpose function for dividing a dataset into test/train
+# splits a data frame into k folds and allocates specific folds
+# to the 'test set'.  This setup allows for easy back-and-forth
+# between regimes using x-validation and a simple test/train split.
 
 partition_data = function(x, k=10, folds_in_test_set=c(9,10)) {
 volumes = unique(x$volume)
