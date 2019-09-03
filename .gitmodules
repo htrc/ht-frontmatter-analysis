@@ -1,0 +1,3 @@
+[submodule "book-segmentation"]
+	path = book-segmentation
+	url = https://github.com/dbamman/book-segmentation
