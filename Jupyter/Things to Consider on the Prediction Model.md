@@ -1,20 +1,18 @@
 The prelim experiment on this project providing a fairly good result, However there are some take aways and considerations to continue moving forward on this project
 
--   The preliminary experiment uses statistical values to achieve the result. This statistic values that might fairly easy to be derived from extracted feature (Need to check the extracted feature set if it contains these values or not)
+- The preliminary experiment uses statistical values to achieve the result. This statistic values that might fairly easy to be derived from extracted feature (Need to check the extracted feature set if it contains these values or not) 
+![](https://storage.googleapis.com/slite-api-files-production/files/4802650e-e258-4977-9cb1-6a55dbe58d44/image.png). 
 
-![](https://storage.googleapis.com/slite-api-files-production/files/4802650e-e258-4977-9cb1-6a55dbe58d44/image.png)
-
-The root elements/variables are:
-
--   seq
--   token_count
--   line_count
--   empty_line_count
--   cap_alpha_seq
--   pct_begin_char_caps
--   pct_end_char_numeric
--   num_roman_numerals
--   pct_all_caps
+- The root elements/variables are: 
+  -   seq
+  -   token_count
+  -   line_count
+  -   empty_line_count
+  -   cap_alpha_seq
+  -   pct_begin_char_caps
+  -   pct_end_char_numeric
+  -   num_roman_numerals
+  -   pct_all_caps
 
 
 -   Besides those elements above, there are some variables that are derived from the root elements such as token_count_normalized and token_count. Although this variables are most highly have high correlation one to the others (because they are having functional dependencies), these variables were used on the prelim experiment. 
