@@ -16,7 +16,7 @@ x.test  = x.test[,-1]
 
 
 
-control = trainControl(method="none", classProbs=TRUE)
+control = trainControl(classProbs=TRUE)
 #control = trainControl(method="cv", number=10)
 metric = "Accuracy"
 
@@ -35,8 +35,6 @@ dotplot(results)
 
 predictions = predict(fit.rf, x.test)
 confusionMatrix(predictions, x.test$target)
-
-
 
 
 n = c(100, 250, 500, 1000, 2500, 5000, 7500, 10000, 15000, 24214)
@@ -73,4 +71,5 @@ filterControl = sbfControl(functions=rfSBF, method="repeatedCV", repeats=5)
 set.seed(7)
 fbWithFiler = sbf(x[,1:11], x$target, sbfControl=filterControl)
 
+length(unique(x$volume))
 
